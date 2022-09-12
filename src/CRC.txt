@@ -1,31 +1,32 @@
-Personaje:
+Personaje elfo:
 
 Responsabilidades:
-Conocer Vida Daño Nombre Nivel
-Conocer Especie Objetos
+Conocer Vida Daño Nombre Nivel especie
+Conocer Objetos
 Conocer experiencia inicial
 Atacar
 Recibir Daño
 Conseguir Objetos
+equipar objetos
+conocer objetos equipados
 Estudiar Magia
 Conseguir experiencia
 Subir de nivel
+conocer especie
 
 Colaboradores:
-Especie
 Items
-Personaje
+Otros Personaje
 
 
 
-
-Especie:
+Personaje Items:
 
 Responsabilidades:
-Conocer Atributos Genéricos
-Conocer Objetos Genéricos
+Conocer multiplicadores
+Conocer Nombre
+Conocer tipo
 
 Colaboradores:
-Objetos
-
+Personajes
 
