@@ -1,15 +1,31 @@
 Personaje:
+
 Responsabilidades:
 Conocer Vida Daño Nombre Nivel
 Conocer Especie Objetos
+Conocer experiencia inicial
+Atacar
+Recibir Daño
+Conseguir Objetos
+Estudiar Magia
+Conseguir experiencia
+Subir de nivel
+
 Colaboradores:
 Especie
 Items
 Personaje
 
 
+
+
 Especie:
+
 Responsabilidades:
 Conocer Atributos Genéricos
 Conocer Objetos Genéricos
+
 Colaboradores:
+Objetos
+
+
