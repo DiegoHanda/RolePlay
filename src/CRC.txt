@@ -20,6 +20,52 @@ Otros Personaje
 
 
 
+
+Personaje Enano:
+
+Responsabilidades:
+Conocer Vida Daño Nombre Nivel especie
+Conocer Objetos
+Conocer experiencia inicial
+Atacar
+Recibir Daño
+Conseguir Objetos
+equipar objetos
+conocer objetos equipados
+Estudiar Magia
+Conseguir experiencia
+Subir de nivel
+conocer especie
+
+Colaboradores:
+Items
+Otros Personaje
+
+
+
+
+Personaje mago:
+
+Responsabilidades:
+Conocer Vida Daño Nombre Nivel especie
+Conocer Objetos
+Conocer experiencia inicial
+Atacar
+Recibir Daño
+Conseguir Objetos
+equipar objetos
+conocer objetos equipados
+Estudiar Magia
+Conseguir experiencia
+Subir de nivel
+conocer especie
+
+Colaboradores:
+Items
+Otros Personaje
+
+
+
 Personaje Items:
 
 Responsabilidades:
