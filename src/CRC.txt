@@ -1,0 +1,15 @@
+Personaje:
+Responsabilidades:
+Conocer Vida Daño Nombre Nivel
+Conocer Especie Objetos
+Colaboradores:
+Especie
+Items
+Personaje
+
+
+Especie:
+Responsabilidades:
+Conocer Atributos Genéricos
+Conocer Objetos Genéricos
+Colaboradores:
