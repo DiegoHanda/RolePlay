@@ -1,4 +1,4 @@
-namespace Mago;
+namespace Library;
 public class Mago
 {
     public string Nombre {get; set;}
