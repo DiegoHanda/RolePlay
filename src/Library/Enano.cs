@@ -1,14 +1,38 @@
 namespace Library;
-public class Enano
+public class Enano:IPersonaje
 {
     public string Nombre {get; set;}
-    public float Salud {get; set;}
+    public int Salud {get; set;}
     public int Nivel {get; set;}
+    public int Daño {get; set;}
+    public int XP {get; set;}
 
-    public Enano (string nombre, float salud, string item)
+    public Enano (string nombre)
     {   
         this.Nombre = nombre;
-        this.Salud = salud;
+        this.Salud = 1300;
+        this.Daño = 200;
         this.Nivel = 1;
+        this.XP=0;
     }
-}   
+    public string SubirNivel()
+    {
+        double necesario = 100 * (this.Nivel/10+1);
+        if (this.XP >= necesario)
+        {
+            this.Nivel += 1;
+            return ($"{this.Nombre} ha subido a nivel {this.Nivel}");
+            
+        }
+        return "";
+    }
+    public void Atacar(IPersonaje personaje)
+    {
+       personaje.RecibirDaño(this.Daño);
+    }
+    public void RecibirDaño(int daño)
+    {  
+        this.Salud-=daño;
+    }
+
+}

@@ -1,5 +1,5 @@
 namespace Library;
-public class Mago
+public class Mago:IPersonaje
 {
     public string Nombre {get; set;}
     public int Salud {get; set;}
@@ -17,7 +17,7 @@ public class Mago
     }
     public string SubirNivel()
     {
-        int necesario=100*(this.Nivel/100+1);
+        double necesario=100*(this.Nivel/5+1);
         if (this.XP >=necesario)
         {
             this.Nivel+=1;
@@ -26,6 +26,13 @@ public class Mago
         }
         return "";
     }
-
+    public void Atacar(IPersonaje personaje)
+    {
+       personaje.RecibirDaño(this.Daño);
+    }
+    public void RecibirDaño(int daño)
+    {  
+        this.Salud-=daño;
+    }
 
 }
