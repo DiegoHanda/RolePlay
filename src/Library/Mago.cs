@@ -2,14 +2,30 @@ namespace Library;
 public class Mago
 {
     public string Nombre {get; set;}
-    public float Salud {get; set;}
+    public int Salud {get; set;}
     public int Nivel {get; set;}
+    public int Daño {get; set;}
+    public int XP {get; set;}
 
-    public Mago (string nombre, float salud, string item)
+    public Mago (string nombre)
     {   
         this.Nombre = nombre;
-        this.Salud = salud;
+        this.Salud = 750;
+        this.Daño=150;
         this.Nivel = 1;
+        this.XP=0;
     }
+    public string SubirNivel()
+    {
+        int necesario=100*(this.Nivel/100+1);
+        if (this.XP >=necesario)
+        {
+            this.Nivel+=1;
+            return ($"{this.Nombre} ha subido a nivel {this.Nivel}");
+            
+        }
+        return "";
+    }
+
 
 }
