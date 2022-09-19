@@ -7,24 +7,8 @@ public class Enano: IPersonaje
     public int Nivel {get; set;}
     public int Daño {get; set;}
     public int XP {get; set;}
-
-
-    public Enano (string nombre)
-    {   
-        this.Nombre = nombre;
-        this.Salud = 1000;
-        this.Daño = 250;
-        this.Nivel = 1;
-        this.XP = 0;
-    }
-    public string SubirNivel()
-    {
-        int necesario=100*(this.Nivel / 10 + 1);
-        if (this.XP >=necesario)
-        {
-            this.Nivel+=1;
-
-    public Enano (string nombre)
+    
+       public Enano (string nombre)
     {   
         this.Nombre = nombre;
         this.Salud = 1300;
@@ -56,12 +40,6 @@ public class Enano: IPersonaje
         }
         return "";
     }
-
-
-    public 
-
-
-
     public void Atacar(IPersonaje personaje)
     {
        personaje.RecibirDaño(this.Daño);
