@@ -7,51 +7,53 @@ public class Elfo:IPersonaje
     public int Nivel {get; set;}
     public int Daño {get; set;}
     public int XP {get; set;}
+    public string Descripcion {get;}
     public Elfo (string nombre)
     {   
-        this.Nombre = nombre;
-        this.Salud = 1000;
-        this.Daño=175;
-        this.Nivel = 1;
-        this.XP=0;
+        Nombre = nombre;
+        Salud = 1000;
+        Daño=175;
+        Nivel = 1;
+        XP=0;
+        Descripcion="Los elfos son criaturas supernaturales que también poseen características mágicas, y en general son conocidos por ayudar a los demás.";
     }
     public string SubirNivel()
     {
-        double necesario=100*(this.Nivel/5+1);
-        if (this.XP >=necesario)
+        double necesario=100*(Nivel/5+1);
+        if (XP >=necesario)
         {
-            this.Nivel+=1;
-            this.XP=0;
-            if (this.Nivel % 5 !=0)
+            Nivel+=1;
+            XP=0;
+            if (Nivel % 5 !=0)
             {
-                this.Daño=Convert.ToInt16(this.Daño*1.1);
-                this.Salud=Convert.ToInt16(this.Salud*1.1);
+                Daño=Convert.ToInt16(Daño*1.1);
+                Salud=Convert.ToInt16(Salud*1.1);
             }
             else
             {
-                this.Daño=Convert.ToInt16(this.Daño*1.2);
-                this.Salud=Convert.ToInt16(this.Salud*1.2);
+                Daño=Convert.ToInt16(Daño*1.2);
+                Salud=Convert.ToInt16(Salud*1.2);
             }
 
-            return ($"{this.Nombre} ha subido a nivel {this.Nivel}");
+            return ($"{Nombre} ha subido a nivel {Nivel}");
             
         }
         return "";
     }
     public void Atacar(IPersonaje personaje)
     {
-       personaje.RecibirDaño(this.Daño);
+       personaje.RecibirDaño(Daño);
     }
     public void RecibirDaño(int daño)
     {  
-        this.Salud-=daño;
+        Salud-=daño;
     }
     public void Curar(IPersonaje personaje)
     {
-        personaje.RecibirSalud (this.Salud);
+        personaje.RecibirSalud (Salud);
     }
     public void RecibirSalud(int salud)
     {
-        this.Salud+=salud;
+        Salud+=salud;
     }
 }

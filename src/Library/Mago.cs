@@ -7,51 +7,55 @@ public class Mago:IPersonaje
     public int Nivel {get; set;}
     public int Daño {get; set;}
     public int XP {get; set;}
+    private string Descripcion {get; set;}
     public Mago (string nombre)
     {   
-        this.Nombre = nombre;
-        this.Salud = 750;
-        this.Daño=150;
-        this.Nivel = 1;
-        this.XP=0;
+        Nombre = nombre;
+        Salud = 100;
+        Daño=10;
+        Nivel = 1;
+        XP=0;
+        Descripcion="Los magos, también conocidos como Istari, tienen el dominio de la mágia, que provee capacidades de ataque y de defensa. La mágia es innata a ellos, aunque pueden adquirir más mediante el estudio de la asignatura, y mediante elementos que la potencian";
     }
     public string SubirNivel()
     {
-        double necesario=100*(this.Nivel/5+1);
-        if (this.XP >=necesario)
+        double necesario=100*(Nivel/5+1);
+        if (XP >=necesario)
         {
-            this.Nivel+=1;
-            this.XP=0;
-            if (this.Nivel % 5 !=0)
+            Nivel+=1;
+            XP=0;
+            if (Nivel % 5 !=0)
             {
-                this.Daño=Convert.ToInt16(this.Daño*1.1);
-                this.Salud=Convert.ToInt16(this.Salud*1.1);
+                Salud=Convert.ToInt16(Salud*11);
             }
             else
             {
-                this.Daño=Convert.ToInt16(this.Daño*1.2);
-                this.Salud=Convert.ToInt16(this.Salud*1.2);
+                Salud=Convert.ToInt16(Salud*1.5);
             }
 
-            return ($"{this.Nombre} ha subido a nivel {this.Nivel}");
+            return ($"{Nombre} ha subido a nivel {Nivel}");
             
         }
         return "";
     }
     public void Atacar(IPersonaje personaje)
     {
-       personaje.RecibirDaño(this.Daño);
+       personaje.RecibirDaño(Daño);
     }
     public void RecibirDaño(int daño)
     {  
-        this.Salud-=daño;
+        Salud-=daño;
     }
     public void Curar(IPersonaje personaje)
     {
-        personaje.RecibirSalud (this.Salud);
+        personaje.RecibirSalud (Salud);
     }
     public void RecibirSalud(int salud)
     {
-        this.Salud+=salud;
+        Salud+=salud;
+    }
+    public void LeerLibro(Libro libro)
+    {
+        Daño=Convert.ToInt16(Daño*(libro.Nivel/10+1));
     }
 }
