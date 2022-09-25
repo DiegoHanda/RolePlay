@@ -1,6 +1,6 @@
  using System;
  namespace Library;
-public class Enano:IPersonaje
+public class Enano: IPersonaje
 {
     public string Nombre {get; set;}
     public int Salud {get; set;}
@@ -8,6 +8,7 @@ public class Enano:IPersonaje
     public int Daño {get; set;}
     public int XP {get; set;}
     public string Descripcion {get; set;}
+    
     public Enano (string nombre)
     {   
         Nombre = nombre;
@@ -35,7 +36,9 @@ public class Enano:IPersonaje
                 Salud=Convert.ToInt16(Salud*1.2);
             }
 
-            return ($"{Nombre} ha subido a nivel {Nivel}");     
+
+            return ($"{this.Nombre} ha subido a nivel {this.Nivel}");
+            
         }
         return "";
     }
@@ -55,4 +58,5 @@ public class Enano:IPersonaje
     {
         Salud+=salud;
     }
+
 }
