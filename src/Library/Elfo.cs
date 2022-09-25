@@ -8,6 +8,7 @@ public class Elfo:IPersonaje
     public int Daño {get; set;}
     public int XP {get; set;}
     public string Descripcion {get;}
+    
     public Elfo (string nombre)
     {   
         Nombre = nombre;
