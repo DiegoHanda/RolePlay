@@ -2,6 +2,7 @@
  namespace Library;
 public class Enano: IPersonaje
 {
+    public int CantidadCuracion;
     public string Nombre {get; set;}
     public int Salud {get; set;}
     public int Nivel {get; set;}
@@ -11,29 +12,30 @@ public class Enano: IPersonaje
     
     public Enano (string nombre)
     {   
-        Nombre = nombre;
-        Salud = 1300;
-        Daño = 200;
-        Nivel = 1;
-        XP=0;
-        Descripcion="Los enanos son seres temperamentales, muy buenos en combate con las armas, físicamente fuertes, con mucha resistencia y leales a sus amigos.";
+        this.Nombre = nombre;
+        this.Salud = 1300;
+        this.Daño = 200;
+        this.Nivel = 1;
+        this.XP=0;
+        this.Descripcion="Los enanos son seres temperamentales, muy buenos en combate con las armas, físicamente fuertes, con mucha resistencia y leales a sus amigos.";
+        this.CantidadCuracion=100;
     }
     public string SubirNivel()
     {
-        double necesario=100*(Nivel/5+1);
-        if (XP >=necesario)
+        int necesario=100*(this.Nivel/5+1);
+        if (this.XP >=necesario)
         {
             Nivel+=1;
-            XP=0;
-            if (Nivel % 5 !=0)
+            this.XP=this.XP-necesario;
+            if (this.Nivel % 5 !=0)
             {
-                Daño=Convert.ToInt16(Daño*1.1);
-                Salud=Convert.ToInt16(Salud*1.1);
+                this.Daño=Convert.ToInt16(this.Daño*1.1);
+                this.Salud=Convert.ToInt16(this.Salud*1.1);
             }
             else
             {
-                Daño=Convert.ToInt16(Daño*1.2);
-                Salud=Convert.ToInt16(Salud*1.2);
+                this.Daño=Convert.ToInt16(this.Daño*1.2);
+                this.Salud=Convert.ToInt16(this.Salud*1.2);
             }
 
 
@@ -52,11 +54,11 @@ public class Enano: IPersonaje
     }
     public void Curar(IPersonaje personaje)
     {
-        personaje.RecibirSalud (Salud);
+        personaje.RecibirSalud (CantidadCuracion);
     }
-    public void RecibirSalud(int salud)
+    public void RecibirSalud(int cantsalud)
     {
-        Salud+=salud;
+        Salud+=cantsalud;
     }
 
 }

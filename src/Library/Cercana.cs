@@ -4,16 +4,26 @@ using System.Collections.Generic;
 namespace Library;
 public class Cercana: IItemsArma
 {
-    public string Nombre;
-    public Cercana()
+    public string GetNombre()
     {
-        Nombre=Arsenal();
+        return this.Nombre;
     }
-    public string Arsenal()
+    public int GetDamage()
     {
-        Random random = new Random();        
-        var list = new List<string>{"Maza","Tizona","Hacha Leviatan","Zulfiqar","Excalibur"," Lanza de Gungnir","Hojas del Caos","Espada de Diamante"};
-        int index = random.Next(list.Count);
-        return (list[index]);
+        return this.Damage;
+    }
+
+    public string GetDescripcion()
+    {
+        return this.Descripcion;
+    }
+    public string Nombre;
+    public int Damage;
+    public string Descripcion;
+    public Cercana(string Nombre, int Damage, string Descripcion)
+    {
+        this.Nombre=Nombre;
+        this.Damage=Damage;
+        this.Descripcion=Descripcion;
     }
 }

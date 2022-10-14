@@ -4,30 +4,27 @@ using System.Collections.Generic;
 namespace Library;
 public class Lejana: IItemsArma
 {
+    public string GetNombre()
+    {
+        return this.Nombre;
+    }
     public int GetDamage()
     {
-
+        return this.Damage;
     }
 
-    public string Descripcion()
+    public string GetDescripcion()
     {
-
-    }
-
-    public string Estadisticas()
-    {
-        
+        return this.Descripcion;
     }
     public string Nombre;
-    public Lejana()
+    public int Damage;
+    public string Descripcion;
+    public Lejana(string Nombre, int Damage, string Descripcion)
     {
-        Nombre=Arsenal();
+        this.Nombre=Nombre;
+        this.Damage=Damage;
+        this.Descripcion=Descripcion;
     }
-    public string Arsenal()
-    {
-        Random random = new Random();        
-        var list = new List<string>{"Arco","Ballesta"};
-        int index = random.Next(list.Count);
-        return (list[index]);
-    }
+    
 }

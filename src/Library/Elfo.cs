@@ -2,6 +2,7 @@ using System;
 namespace Library;
 public class Elfo:IPersonaje
 {
+    public int CantidadCuracion {get; set;}
     public string Nombre {get; set;}
     public int Salud {get; set;}
     public int Nivel {get; set;}
@@ -11,39 +12,40 @@ public class Elfo:IPersonaje
     
     public Elfo (string nombre)
     {   
-        Nombre = nombre;
-        Salud = 1000;
-        Daño=175;
-        Nivel = 1;
-        XP=0;
-        Descripcion="Los elfos son criaturas supernaturales que también poseen características mágicas, y en general son conocidos por ayudar a los demás.";
+        this.Nombre = nombre;
+        this.Salud = 1000;
+        this.Daño=175;
+        this.Nivel = 1;
+        this.XP=0;
+        this.Descripcion="Los elfos son criaturas supernaturales que también poseen características mágicas, y en general son conocidos por ayudar a los demás.";
+        this.CantidadCuracion=150;
     }
     public string SubirNivel()
     {
-        double necesario=100*(Nivel/5+1);
-        if (XP >=necesario)
+        int necesario=100*(Nivel/5+1);
+        if (this.XP >=necesario)
         {
             Nivel+=1;
-            XP=0;
-            if (Nivel % 5 !=0)
+            this.XP=this.XP-necesario;
+            if (this.Nivel % 5 !=0)
             {
-                Daño=Convert.ToInt16(Daño*1.1);
-                Salud=Convert.ToInt16(Salud*1.1);
+                this.Daño=Convert.ToInt16(this.Daño*1.1);
+                this.Salud=Convert.ToInt16(this.Salud*1.1);
             }
             else
             {
-                Daño=Convert.ToInt16(Daño*1.2);
-                Salud=Convert.ToInt16(Salud*1.2);
+                this.Daño=Convert.ToInt16(this.Daño*1.2);
+                this.Salud=Convert.ToInt16(this.Salud*1.2);
             }
 
-            return ($"{Nombre} ha subido a nivel {Nivel}");
+            return ($"{this.Nombre} ha subido a nivel {this.Nivel}");
             
         }
         return "";
     }
     public void Atacar(IPersonaje personaje)
     {
-       personaje.RecibirDaño(Daño);
+       personaje.RecibirDaño(this.Daño);
     }
     public void RecibirDaño(int daño)
     {  
@@ -51,10 +53,10 @@ public class Elfo:IPersonaje
     }
     public void Curar(IPersonaje personaje)
     {
-        personaje.RecibirSalud (Salud);
+        personaje.RecibirSalud (CantidadCuracion);
     }
-    public void RecibirSalud(int salud)
+    public void RecibirSalud(int cantsalud)
     {
-        Salud+=salud;
+        Salud+=cantsalud;
     }
 }
