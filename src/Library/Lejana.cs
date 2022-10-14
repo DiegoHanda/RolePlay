@@ -2,8 +2,22 @@ using System;
 using System.Collections.Generic;
 
 namespace Library;
-public class Lejana:IArma
+public class Lejana: IItemsArma
 {
+    public int GetDamage()
+    {
+
+    }
+
+    public string Descripcion()
+    {
+
+    }
+
+    public string Estadisticas()
+    {
+        
+    }
     public string Nombre;
     public Lejana()
     {

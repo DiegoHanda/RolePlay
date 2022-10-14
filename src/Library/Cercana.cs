@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 
 namespace Library;
-public class Cercana:IArma
+public class Cercana: IItemsArma
 {
     public string Nombre;
     public Cercana()
