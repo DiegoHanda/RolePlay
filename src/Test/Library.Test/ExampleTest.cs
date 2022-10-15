@@ -25,7 +25,7 @@ namespace Test.Library
             Assert.AreEqual(nivelEsperado,nivelActual);
         }
         [Test]
-        public void chequearAtacarYRecibirDaño()
+        public void chequearAtacarYRecibirDaño()//Se testea que al recibir da;o el personaje efectivamente pirda vida
         {
            Enano enano1 = new Enano("enano1");
            Mago mago1 = new Mago ("mago1");
@@ -35,7 +35,7 @@ namespace Test.Library
             Assert.AreEqual(saludEsperadaEnano,saludActualEnano);
         }
         [Test]
-        public void chequearCuraryRecibirVida()
+        public void chequearCuraryRecibirVida()//Se testea para asegurarse de que la curacion de un personaje a otro funcinoe bien
         {
            Enano enano1 = new Enano("enano1");
            Mago mago1 = new Mago ("mago1");
