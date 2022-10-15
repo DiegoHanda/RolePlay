@@ -1,13 +1,19 @@
 using NUnit.Framework;
+using Library;
 
 namespace Test.Library
 {
     public class ExampleTest
     {
         [Test]
-        public void dummyTest()
+        public void chequearCuraryRecibirVida()
         {
-            Assert.True(true);
+           Enano enano1 = new Enano("enano1");
+           Mago mago1 = new Mago ("mago1");
+           mago1.Curar(enano1);
+           int saludActualEnano = enano1.Salud;
+           int saludEsperadaEnano = 1450;
+            Assert.AreEqual(saludEsperadaEnano,saludActualEnano);
         }
     }
 }
